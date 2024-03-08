@@ -57,6 +57,14 @@ public class User4Controller {
         return "redirect:/user4/list";
     }
 
+    @GetMapping("/user4/delete")
+    public String delete(@RequestParam("name") String name) {
+        System.out.println("name : " + name);
+
+        service.deleteUser4(name);
+        return "redirect:/user4/list";
+    }
+
 }
 
 

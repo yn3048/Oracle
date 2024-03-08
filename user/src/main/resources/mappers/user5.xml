@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--
+    오라클은 ``백틱이랑 ; 콜론 사용 안함!!
+-->
+<mapper namespace="kr.co.user.mapper.User5Mapper">
+
+    <insert id="insertUser5">
+        INSERT INTO USER5 VALUES (#{name}, #{gender}, #{age}, #{addr})
+    </insert>
+
+    <select id="selectUser5s" resultType="kr.co.user.dto.User5DTO">
+        SELECT * FROM USER5
+    </select>
+
+    <select id="selectUser5" resultType="kr.co.user.dto.User5DTO">
+        SELECT * FROM USER5 WHERE NAME = #{name}
+    </select>
+
+    <update id="updateUser5">
+        UPDATE USER5 SET
+                        gender = #{gender},
+                        age = #{age},
+                        addr = #{addr}
+                     WHERE
+                        name = #{name}
+    </update>
+
+    <delete id="deleteUser5">
+        DELETE FROM USER5 WHERE NAME = #{name}
+    </delete>
+</mapper>
+
+
+
+
+
+
+
+
